@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 //   })
 // );
 const corsConfig = {
-  origin: "",
+  origin: ["https://socialmediaappmern-api.vercel.app"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
@@ -65,10 +65,10 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
-app.get('/', (req, res) => {
-  // Your code to handle the root path request
-  app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-});
+// app.get('/', (req, res) => {
+//   // Your code to handle the root path request
+//   app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+// });
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose
