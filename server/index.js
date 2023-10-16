@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 //   })
 // );
 const corsConfig = {
-  origin: ["https://socialmediaappmern-api.vercel.app"],
+  origin: '',
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
